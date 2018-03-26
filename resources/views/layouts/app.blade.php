@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>室内混合智能定位于室内GIS技术检测平台</title>
+    <title>室内混合智能定位安全监控与监测预警</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -87,7 +87,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/page/terminal') }}">
-                室内混合智能定位于室内GIS技术检测平台
+                室内混合智能定位安全监控与监测预警
             </a>
         </div>
 

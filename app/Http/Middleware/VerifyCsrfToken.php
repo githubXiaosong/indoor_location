@@ -12,7 +12,10 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        "/api/getObjects",
-        "/api/updateLocation"
+        "/api/getUserList",
+        "/api/getUserLocation",
+        "/api/getTerminalList",
+        "/api/getTerminalLocation",
+        "/api/getObjectList"
     ];
 }

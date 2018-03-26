@@ -75,7 +75,7 @@ class ObjectController extends Controller
     /**
      * 上报位置接口
      */
-    public function getObjects()
+    public function getList()
     {
         $validator = Validator::make(
             rq(),

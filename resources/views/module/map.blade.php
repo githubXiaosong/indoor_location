@@ -37,7 +37,7 @@
         map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
         map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 
-        $.post("/api/getObjects", function (data, status) {
+        $.post("/api/getObjectList", function (data, status) {
 //            alert("Data: " + data + "nStatus: " + status);
             if (status == 'success') {
                 for (var k = 0, length = data.length; k < length; k++) {

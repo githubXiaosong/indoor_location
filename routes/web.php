@@ -59,6 +59,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::post('addUser', 'Service\UserController@addUser');
     Route::post('removeUser', 'Service\UserController@removeUser');
     Route::post('modifyUser', 'Service\UserController@modifyUser');
+    Route::post('getUserList', 'Service\TerminalController@getList');//todo remove the csrf token
     Route::post('getUserLocation', 'Service\UserController@getLocation');//todo remove the csrf token
 
     Route::post('transmitTerminalMsg', 'Service\TerminalController@transmitMsg');
@@ -66,13 +67,15 @@ Route::group(['prefix' => 'api'], function () {
     Route::post('addTerminal', 'Service\TerminalController@addTerminal');
     Route::post('removeTerminal', 'Service\TerminalController@removeTerminal');
     Route::post('modifyTerminal', 'Service\TerminalController@modifyTerminal');
+    Route::post('getTerminalList', 'Service\TerminalController@getList');//todo remove the csrf token
     Route::post('getTerminalLocation', 'Service\TerminalController@getLocation');//todo remove the csrf token
 
     Route::post('addObject', 'Service\ObjectController@addObject');
     Route::post('removeObject', 'Service\ObjectController@removeObject');
     Route::post('modifyObject', 'Service\ObjectController@modifyObject');
-    Route::post('getObjects', 'Service\ObjectController@getObjects');//todo remove the csrf token
+    Route::post('getObjectList', 'Service\ObjectController@getList');//todo remove the csrf token
     Route::post('updateLocation', 'Service\ObjectController@updateLocation');
+
 
 
 });

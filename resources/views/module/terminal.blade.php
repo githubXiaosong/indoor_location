@@ -17,7 +17,7 @@
 
     <div class="panel-heading">
         <div class="pull-left">
-            <strong>终端列表</strong>&nbsp;&nbsp;
+            <strong >终端列表</strong>&nbsp;&nbsp;
             <button type="button" class="btn btn-default btn-xs " data-toggle="modal" data-target="#modal-addTerminal">
                 <span class="glyphicon  glyphicon-plus" aria-hidden="true"></span>
             </button>
@@ -73,6 +73,8 @@
 
 
 
+
+
     <div class="panel-body">
         <table class="table tbl_streams">
 
@@ -116,7 +118,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="delete_terminal" terminal_id="{{ $terminal->id }}" >
+                                    <a class="delete_terminal" terminal_id="{{ $terminal->id }}">
                                         删除
                                     </a>
                                 </li>

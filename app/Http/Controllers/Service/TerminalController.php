@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Validator;
 class TerminalController extends Controller
 {
 
+    public function getList(){
+        return Terminal::get();
+    }
+
+
     /**
      * 发送消息接口  0 APP->WEB   1 WEB->APP
      */

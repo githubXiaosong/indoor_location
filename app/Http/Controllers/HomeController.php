@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Object;
 use App\Terminal;
 use App\Tr_msg;
 use App\User;
@@ -17,9 +18,12 @@ class HomeController extends Controller
         return view("home");
     }
 
-    public function test(){
+    public function test()
+    {
+
         return rq('key');
     }
 
 
 }
+
