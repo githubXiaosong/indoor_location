@@ -3,20 +3,20 @@ Navicat MySQL Data Transfer
 
 Source Server         : 127.0.0.1
 Source Server Version : 50505
-Source Host           : 127.0.0.1:3306
+Source Host           : localhost:3306
 Source Database       : indoor_location
 
 Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-03-15 15:54:10
+Date: 2018-03-26 17:28:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `objects`
+-- Table structure for objects
 -- ----------------------------
 DROP TABLE IF EXISTS `objects`;
 CREATE TABLE `objects` (
@@ -34,12 +34,12 @@ CREATE TABLE `objects` (
 -- ----------------------------
 -- Records of objects
 -- ----------------------------
-INSERT INTO `objects` VALUES ('11', '110.111.112.113', 'test1', '1', '114', '38', '2018-03-15 07:04:11', '2018-03-15 03:14:44');
-INSERT INTO `objects` VALUES ('12', '110.111.112.113', 'test2', '1', '38.031111', '114.481111', '2018-03-15 03:15:28', '2018-03-15 03:15:28');
-INSERT INTO `objects` VALUES ('13', '110.111.112.113', 'test3', '0', '38.032222', '114.482222', '2018-03-15 03:16:04', '2018-03-15 03:16:04');
+INSERT INTO `objects` VALUES ('11', '192.168.1.131', 'test1', '1', '38.033333', '114.486666', '2018-03-15 07:04:11', '2018-03-15 03:14:44');
+INSERT INTO `objects` VALUES ('12', '192.168.1.135', 'test2', '1', '38.031111', '114.481111', '2018-03-15 03:15:28', '2018-03-15 03:15:28');
+INSERT INTO `objects` VALUES ('13', '192.168.1.138', 'test3', '0', '38.031111', '114.482222', '2018-03-15 03:16:04', '2018-03-15 03:16:04');
 
 -- ----------------------------
--- Table structure for `terminals`
+-- Table structure for terminals
 -- ----------------------------
 DROP TABLE IF EXISTS `terminals`;
 CREATE TABLE `terminals` (
@@ -52,19 +52,18 @@ CREATE TABLE `terminals` (
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of terminals
 -- ----------------------------
-INSERT INTO `terminals` VALUES ('12', '110.111.112.113', 'xiaosong', '{\"x\":11,\"y\":22,\"z\":33}', '1', '2018-03-12 09:18:13', '2018-03-12 09:18:13');
-INSERT INTO `terminals` VALUES ('14', '110.111.112.113', 'xiaosong', '{\"x\":11,\"y\":22,\"z\":33}', '1', '2018-03-15 01:23:00', '2018-03-15 01:23:00');
-INSERT INTO `terminals` VALUES ('16', '110.111.112.113', 'xiaosong', '{\"x\":11,\"y\":22,\"z\":33}', '1', '2018-03-15 01:23:35', '2018-03-15 01:23:35');
-INSERT INTO `terminals` VALUES ('17', '110.111.112.113', 'xiaosong', '{\"x\":11,\"y\":22,\"z\":33}', '1', '2018-03-15 01:23:44', '2018-03-15 01:23:44');
-INSERT INTO `terminals` VALUES ('18', '110.111.112.113', 'xiaosong2', '{\"x\":11,\"y\":22,\"z\":33}', '1', '2018-03-15 01:24:24', '2018-03-15 01:24:24');
+INSERT INTO `terminals` VALUES ('19', '192.168.1.12', '定位基站1', '{\"x\":1000,\"y\":2000,\"z\":3000}', '1', '2018-03-26 08:54:06', '2018-03-26 08:54:06');
+INSERT INTO `terminals` VALUES ('20', '192.168.1.13', '定位基站2', '{\"x\":1000,\"y\":1500,\"z\":3000}', '1', '2018-03-26 08:54:35', '2018-03-26 08:54:35');
+INSERT INTO `terminals` VALUES ('21', '192.168.1.14', '定位基站3', '{\"x\":2000,\"y\":1500,\"z\":3000}', '0', '2018-03-26 08:55:02', '2018-03-26 08:55:02');
+INSERT INTO `terminals` VALUES ('22', '192.168.1.15', '定位基站4', '{\"x\":3000,\"y\":1500,\"z\":3000}', '1', '2018-03-26 08:55:31', '2018-03-26 08:55:31');
 
 -- ----------------------------
--- Table structure for `terminal_msgs`
+-- Table structure for terminal_msgs
 -- ----------------------------
 DROP TABLE IF EXISTS `terminal_msgs`;
 CREATE TABLE `terminal_msgs` (
@@ -82,12 +81,9 @@ CREATE TABLE `terminal_msgs` (
 -- ----------------------------
 -- Records of terminal_msgs
 -- ----------------------------
-INSERT INTO `terminal_msgs` VALUES ('1', '12', 'asdas', '1', '2018-03-15 03:45:02', '2018-03-15 03:45:02');
-INSERT INTO `terminal_msgs` VALUES ('2', '12', 'aaaa', '1', '2018-03-15 03:45:51', '2018-03-15 03:45:51');
-INSERT INTO `terminal_msgs` VALUES ('3', '12', 'imagefile profiles', '1', '2018-03-15 03:46:59', '2018-03-15 03:46:59');
 
 -- ----------------------------
--- Table structure for `users`
+-- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -100,18 +96,17 @@ CREATE TABLE `users` (
   `updated_at` datetime NOT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('10', 'xiaosong', '{\"x\":11,\"y\":22,\"z\":33}', '2', '0', '110.111.112.113', '2018-03-12 09:19:32', '2018-03-12 09:19:32');
-INSERT INTO `users` VALUES ('11', 'xiaosong', '{\"x\":11,\"y\":22,\"z\":33}', '2', '0', '110.111.112.113', '2018-03-15 01:25:02', '2018-03-15 01:25:02');
-INSERT INTO `users` VALUES ('12', 'xiaosong', '{\"x\":11,\"y\":22,\"z\":33}', '2', '0', '110.111.112.113', '2018-03-15 01:25:12', '2018-03-15 01:25:12');
-INSERT INTO `users` VALUES ('13', 'xiaosong', '{\"x\":11,\"y\":22,\"z\":33}', '2', '0', '110.111.112.113', '2018-03-15 01:25:28', '2018-03-15 01:25:28');
+INSERT INTO `users` VALUES ('14', '维护人员1', '{\"x\":0,\"y\":200,\"z\":100}', '0', '2', '192.168.1.102', '2018-03-26 09:01:46', '2018-03-26 09:01:46');
+INSERT INTO `users` VALUES ('15', '维护人员2', '{\"x\":100,\"y\":200,\"z\":100}', '0', '2', '192.168.1.103', '2018-03-26 09:01:46', '2018-03-26 09:01:46');
+INSERT INTO `users` VALUES ('16', '维护人员3', '{\"x\":300,\"y\":300,\"z\":98}', '0', '2', '192.168.1.112', '2018-03-26 09:01:46', '2018-03-26 09:01:46');
 
 -- ----------------------------
--- Table structure for `user_msgs`
+-- Table structure for user_msgs
 -- ----------------------------
 DROP TABLE IF EXISTS `user_msgs`;
 CREATE TABLE `user_msgs` (
